@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>test002-02</title>
+<script>
+  function draw() {
+    var canvas1, ctx1;
+    canvas1 = document.getElementById('CANVAS1');
+    ctx1 = canvas1.getContext('2d');
+    
+    ctx1.beginPath();
+    for (var x=200; x<=300; x+=10) {
+      ctx1.arc(x, 70, 60, 0, Math.PI*2, false);
+    }
+    ctx1.stroke();
+    
+    ctx1.beginPath();
+    ctx1.moveTo(20, 20);
+    ctx1.lineTo(120, 20);
+    ctx1.lineTo(120, 120);
+    ctx1.lineTo(20, 120);
+    ctx1.closePath();
+    ctx1.stroke();
+  }
+</script>
+</head>
+<body>
+線、円
+<input type="button" value="引く" onClick="draw();"><br />
+<canvas id="CANVAS1" style="background-color: #FF99FF;" width="500" height="200"></canvas>
+</body>
+</html>
